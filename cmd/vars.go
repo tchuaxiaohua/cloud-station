@@ -19,7 +19,7 @@ var (
 	config    = ""
 	token     = ""
 	cloudtype = ""
-	title     = ""
+	title     = "文件下载通知"
 )
 
 // initEnvValue 变量初始化配置 命令行参数 > 环境变量 > 配置文件

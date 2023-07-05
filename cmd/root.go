@@ -79,6 +79,6 @@ func init() {
 	StartCmd.PersistentFlags().StringVarP(&bucketPrefix, "prefix", "p", "", "指定上传后文件路径前缀")
 	StartCmd.PersistentFlags().StringVarP(&localFileName, "localpath", "f", "", "指定本地上传文件")
 	StartCmd.PersistentFlags().StringVarP(&token, "dingtoken", "t", "", "钉钉token")
-	StartCmd.PersistentFlags().StringVarP(&title, "title", "T", "", "钉钉通知主题")
+	StartCmd.PersistentFlags().StringVarP(&title, "title", "T", title, "钉钉通知主题")
 	StartCmd.PersistentFlags().StringVarP(&title, "config", "c", "", "指定配置文件")
 }

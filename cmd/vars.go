@@ -3,6 +3,8 @@ package cmd
 import (
 	"log"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/spf13/viper"
 )
@@ -97,9 +99,12 @@ func initEnvValue() {
 }
 
 func loadConfig() {
-	viper.SetConfigName("local_app")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".")
+	configPath := filepath.Dir(config)
+	filename := filepath.Base(config)
+	strings.Split(filename, ".")
+	viper.SetConfigName(strings.Split(filename, ".")[0])
+	viper.SetConfigType(strings.Split(filename, ".")[1])
+	viper.AddConfigPath(configPath)
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatal("read config failed: %v", err)

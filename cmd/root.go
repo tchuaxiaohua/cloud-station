@@ -30,7 +30,6 @@ var StartCmd = &cobra.Command{
 		cloudOptions := store.NewOptions(endPoint, secretID, secretKey)
 		// 初始化 桶参数配置
 		cloudStore := store.NewStorageReq(bucketName, bucketPrefix, utils.FileName(localFileName), localFileName)
-		fmt.Println(bucketName)
 		if ok {
 			var fileUrl string
 			switch cloudtype {
@@ -79,6 +78,6 @@ func init() {
 	StartCmd.PersistentFlags().StringVarP(&bucketPrefix, "prefix", "p", "", "指定上传后文件路径前缀")
 	StartCmd.PersistentFlags().StringVarP(&localFileName, "localpath", "f", "", "指定本地上传文件")
 	StartCmd.PersistentFlags().StringVarP(&token, "dingtoken", "t", "", "钉钉token")
-	StartCmd.PersistentFlags().StringVarP(&title, "title", "T", title, "钉钉通知主题")
-	StartCmd.PersistentFlags().StringVarP(&title, "config", "c", "", "指定配置文件")
+	StartCmd.PersistentFlags().StringVarP(&title, "title", "T", "文件下载通知", "钉钉通知主题")
+	StartCmd.PersistentFlags().StringVarP(&config, "config", "c", "", "指定配置文件")
 }

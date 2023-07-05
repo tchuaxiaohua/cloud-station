@@ -1,0 +1,14 @@
+cloud:
+  secretID:
+  secretKey:
+  endpoint:
+  bucketName:
+  bucketPrefix:
+  cloudFileName:
+  localFilePath:
+
+dingding:
+  token:
+  title:
+
+cloudtype:

@@ -18,8 +18,9 @@ var StartCmd = &cobra.Command{
 	Long:  "Usage: cloud-station COMMAND",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		// 配置文件加载
-		loadConfig()
-
+		if config != "" {
+			loadConfig()
+		}
 		// 变量加载
 		initEnvValue()
 

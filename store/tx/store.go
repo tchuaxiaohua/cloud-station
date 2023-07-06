@@ -16,7 +16,7 @@ type TxCosStore struct {
 	client *cos.Client
 }
 
-func NewTxCosStore(opts *store.Options, prefix string) (*TxCosStore, error) {
+func NewTxCosStore(opts *store.Options) (*TxCosStore, error) {
 	u, _ := url.Parse(opts.Endpoint)
 	b := &cos.BaseURL{BucketURL: u}
 	c := cos.NewClient(b, &http.Client{

@@ -46,7 +46,7 @@ var StartCmd = &cobra.Command{
 				}
 				log.Printf("文件上传成功,上传地址:%s", fileUrl)
 			case "txyun":
-				txClient, err := tx.NewTxCosStore(cloudOptions, bucketPrefix)
+				txClient, err := tx.NewTxCosStore(cloudOptions)
 				if err != nil {
 					log.Fatal("初始化错误", err)
 				}
